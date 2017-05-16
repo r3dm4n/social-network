@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3BE8F83E403208354606CE66 /* Pods_social_network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A257A9972EBED79649BC28 /* Pods_social_network.framework */; };
 		BEE02A9B1ECB69A400AC69F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE02A9A1ECB69A400AC69F3 /* AppDelegate.swift */; };
-		BEE02A9D1ECB69A400AC69F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE02A9C1ECB69A400AC69F3 /* ViewController.swift */; };
+		BEE02A9D1ECB69A400AC69F3 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE02A9C1ECB69A400AC69F3 /* SignInVC.swift */; };
 		BEE02AA01ECB69A400AC69F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE02A9E1ECB69A400AC69F3 /* Main.storyboard */; };
 		BEE02AA21ECB69A400AC69F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEE02AA11ECB69A400AC69F3 /* Assets.xcassets */; };
 		BEE02AA51ECB69A400AC69F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE02AA31ECB69A400AC69F3 /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		B5A257A9972EBED79649BC28 /* Pods_social_network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_social_network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE02A971ECB69A400AC69F3 /* social-network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "social-network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE02A9A1ECB69A400AC69F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEE02A9C1ECB69A400AC69F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEE02A9C1ECB69A400AC69F3 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		BEE02A9F1ECB69A400AC69F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEE02AA11ECB69A400AC69F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEE02AA41ECB69A400AC69F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +59,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BEB9AE241ECB7118009C3DE7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BEB9AE251ECB711E009C3DE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BEB9AE261ECB7125009C3DE7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEE02A9C1ECB69A400AC69F3 /* SignInVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		BEE02A8E1ECB69A400AC69F3 = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +102,10 @@
 		BEE02A991ECB69A400AC69F3 /* social-network */ = {
 			isa = PBXGroup;
 			children = (
+				BEB9AE241ECB7118009C3DE7 /* Model */,
+				BEB9AE251ECB711E009C3DE7 /* View */,
+				BEB9AE261ECB7125009C3DE7 /* Controller */,
 				BEE02A9A1ECB69A400AC69F3 /* AppDelegate.swift */,
-				BEE02A9C1ECB69A400AC69F3 /* ViewController.swift */,
 				BEE02A9E1ECB69A400AC69F3 /* Main.storyboard */,
 				BEE02AA11ECB69A400AC69F3 /* Assets.xcassets */,
 				BEE02AA31ECB69A400AC69F3 /* LaunchScreen.storyboard */,
@@ -216,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEE02A9D1ECB69A400AC69F3 /* ViewController.swift in Sources */,
+				BEE02A9D1ECB69A400AC69F3 /* SignInVC.swift in Sources */,
 				BEE02A9B1ECB69A400AC69F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +407,7 @@
 				BEE02AAB1ECB69A400AC69F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
