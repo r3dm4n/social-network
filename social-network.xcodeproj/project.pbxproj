@@ -24,6 +24,7 @@
 /* Begin PBXFileReference section */
 		4BC3CC72206C5343950C14A7 /* Pods-social-network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-social-network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-social-network/Pods-social-network.debug.xcconfig"; sourceTree = "<group>"; };
 		B5A257A9972EBED79649BC28 /* Pods_social_network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_social_network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB630DE1ED02E89005ABC45 /* social-network.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "social-network.entitlements"; sourceTree = "<group>"; };
 		BEE02A971ECB69A400AC69F3 /* social-network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "social-network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE02A9A1ECB69A400AC69F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEE02A9C1ECB69A400AC69F3 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		BEE02A991ECB69A400AC69F3 /* social-network */ = {
 			isa = PBXGroup;
 			children = (
+				BEB630DE1ED02E89005ABC45 /* social-network.entitlements */,
 				BEE9F3631ED0136100E337D2 /* Util */,
 				BEB9AE241ECB7118009C3DE7 /* Model */,
 				BEB9AE251ECB711E009C3DE7 /* View */,
@@ -175,6 +177,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 5XZQ592FBM;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
