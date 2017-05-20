@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3BE8F83E403208354606CE66 /* Pods_social_network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A257A9972EBED79649BC28 /* Pods_social_network.framework */; };
+		BE6CCDF41ED055AB00530ECD /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6CCDF31ED055AB00530ECD /* FeedVC.swift */; };
 		BEE02A9B1ECB69A400AC69F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE02A9A1ECB69A400AC69F3 /* AppDelegate.swift */; };
 		BEE02A9D1ECB69A400AC69F3 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE02A9C1ECB69A400AC69F3 /* SignInVC.swift */; };
 		BEE02AA01ECB69A400AC69F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE02A9E1ECB69A400AC69F3 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		4BC3CC72206C5343950C14A7 /* Pods-social-network.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-social-network.debug.xcconfig"; path = "Pods/Target Support Files/Pods-social-network/Pods-social-network.debug.xcconfig"; sourceTree = "<group>"; };
 		B5A257A9972EBED79649BC28 /* Pods_social_network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_social_network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE6CCDF31ED055AB00530ECD /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		BEB630DE1ED02E89005ABC45 /* social-network.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "social-network.entitlements"; sourceTree = "<group>"; };
 		BEE02A971ECB69A400AC69F3 /* social-network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "social-network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE02A9A1ECB69A400AC69F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				BEE02A9C1ECB69A400AC69F3 /* SignInVC.swift */,
+				BE6CCDF31ED055AB00530ECD /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE9F3691ED0172500E337D2 /* FancyField.swift in Sources */,
+				BE6CCDF41ED055AB00530ECD /* FeedVC.swift in Sources */,
 				BEE02A9D1ECB69A400AC69F3 /* SignInVC.swift in Sources */,
 				BEE9F3671ED0154700E337D2 /* RoundButton.swift in Sources */,
 				BEE9F36B1ED019E200E337D2 /* FancyButton.swift in Sources */,
