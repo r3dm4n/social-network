@@ -11,6 +11,7 @@
 		BE4F2E631ED310C300B9B84E /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F2E621ED310C300B9B84E /* CircleView.swift */; };
 		BE4F2E651ED3395C00B9B84E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F2E641ED3395C00B9B84E /* PostCell.swift */; };
 		BE4F2E681ED349AF00B9B84E /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F2E671ED349AF00B9B84E /* DataService.swift */; };
+		BE4F2E6A1ED4173A00B9B84E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4F2E691ED4173A00B9B84E /* Post.swift */; };
 		BE6CCDF41ED055AB00530ECD /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6CCDF31ED055AB00530ECD /* FeedVC.swift */; };
 		BEE02A9B1ECB69A400AC69F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE02A9A1ECB69A400AC69F3 /* AppDelegate.swift */; };
 		BEE02A9D1ECB69A400AC69F3 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE02A9C1ECB69A400AC69F3 /* SignInVC.swift */; };
@@ -31,6 +32,7 @@
 		BE4F2E621ED310C300B9B84E /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BE4F2E641ED3395C00B9B84E /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		BE4F2E671ED349AF00B9B84E /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BE4F2E691ED4173A00B9B84E /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BE6CCDF31ED055AB00530ECD /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		BEB630DE1ED02E89005ABC45 /* social-network.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "social-network.entitlements"; sourceTree = "<group>"; };
 		BEE02A971ECB69A400AC69F3 /* social-network.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "social-network.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 		BEB9AE241ECB7118009C3DE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE4F2E691ED4173A00B9B84E /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				BE4F2E631ED310C300B9B84E /* CircleView.swift in Sources */,
 				BEE9F3691ED0172500E337D2 /* FancyField.swift in Sources */,
 				BE6CCDF41ED055AB00530ECD /* FeedVC.swift in Sources */,
+				BE4F2E6A1ED4173A00B9B84E /* Post.swift in Sources */,
 				BEE02A9D1ECB69A400AC69F3 /* SignInVC.swift in Sources */,
 				BEE9F3671ED0154700E337D2 /* RoundButton.swift in Sources */,
 				BE4F2E681ED349AF00B9B84E /* DataService.swift in Sources */,
