@@ -14,11 +14,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
+    @IBOutlet weak var captionField: FancyField!
 
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
-
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    var imageSelected = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +56,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let post = posts[indexPath.row]
-        
+
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
-            
+
             if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 cell.configureCell(post: post, img: img)
             } else {
@@ -70,11 +71,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             return PostCell()
         }
     }
-    
+
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imageAdd.image = image
+            imageSelected = true
         } else {
             print("A valid image wasn't selected")
         }
@@ -93,6 +95,35 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         print(keychainResult)
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToSignIn", sender: nil)
+    }
+
+
+    @IBAction func postButtonTapped(_ sender: Any) {
+        guard let caption = captionField.text, caption != "" else {
+            print("Caption must be entered")
+            return
+        }
+        guard let img = imageAdd.image, imageSelected == true else {
+            print("An image must be selected")
+            return
+        }
+
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {
+
+            let imageUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+
+            DataService.ds.REF_POST_IMAGES.child(imageUid).put(imgData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print("Unable to upload image to Firebase Storage")
+                } else {
+                    print("Succesfully uploaded image to Firbase Storage")
+
+                    let downloadURL = metadata?.downloadURL()?.absoluteString
+                }
+            }
+        }
     }
 
 
