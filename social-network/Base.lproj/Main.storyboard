@@ -340,6 +340,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="8Cf-Tp-bSa" id="V3d-HS-knd"/>
                         <outlet property="tableView" destination="Mxo-K1-Qjs" id="NfO-yX-x84"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="HNQ-Pr-nOJ"/>
                     </connections>
@@ -350,7 +351,11 @@
                         <action selector="signOutTapped:" destination="AUd-mX-7LK" id="Kxs-ca-WnO"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="0S9-H8-DTD"/>
+                <tapGestureRecognizer id="0S9-H8-DTD">
+                    <connections>
+                        <action selector="addImageTapped:" destination="AUd-mX-7LK" id="iaP-Et-AHZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="925.60000000000002" y="138.98050974512745"/>
         </scene>

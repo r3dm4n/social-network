@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Firebase
 
 class Post {
     private var _caption: String!
