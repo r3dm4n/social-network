@@ -10,33 +10,42 @@ import UIKit
 import Firebase
 
 class PostCell: UITableViewCell {
-    
+
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
-    
+
     var post: Post!
     var likesRef: FIRDatabaseReference!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
         tap.numberOfTapsRequired = 1
         likeImg.addGestureRecognizer(tap)
         likeImg.isUserInteractionEnabled = true
     }
-    
+
     func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
         likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
-        
+
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
-        
+
+        getPostImage(img: img)
+        handleLikes()
+
+    }
+
+
+
+
+    func getPostImage(img: UIImage? = nil) {
         if img != nil {
             self.postImg.image = img
         } else {
@@ -49,13 +58,15 @@ class PostCell: UITableViewCell {
                     if let imgData = data {
                         if let img = UIImage(data: imgData) {
                             self.postImg.image = img
-                            FeedVC.imageCache.setObject(img, forKey: post.imageUrl as NSString)
+                            FeedVC.imageCache.setObject(img, forKey: self.post.imageUrl as NSString)
                         }
                     }
                 }
             })
         }
-        
+    }
+
+    func handleLikes() {
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
                 self.likeImg.image = UIImage(named: "empty-heart")
@@ -64,7 +75,8 @@ class PostCell: UITableViewCell {
             }
         })
     }
-    
+
+
     func likeTapped(sender: UITapGestureRecognizer) {
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
@@ -78,5 +90,5 @@ class PostCell: UITableViewCell {
             }
         })
     }
-    
+
 }
