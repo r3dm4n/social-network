@@ -15,6 +15,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
     @IBOutlet weak var captionField: FancyField!
+    
+    
 
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
@@ -32,6 +34,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker.delegate = self
 
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            
+            self.posts = []
+            
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
                     print("SNAP", snap)
@@ -56,11 +61,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         let post = posts[indexPath.row]
-
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
-
+            
             if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 cell.configureCell(post: post, img: img)
             } else {
@@ -81,6 +86,23 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             print("A valid image wasn't selected")
         }
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+
+    func postToFirebase(imgUrl: String) {
+        let post: Dictionary<String, AnyObject> = [
+            "caption": captionField.text as AnyObject,
+            "imageUrl": imgUrl as AnyObject,
+            "likes": 0 as AnyObject
+        ]
+
+        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+        firebasePost.setValue(post)
+
+        captionField.text = ""
+        imageSelected = false
+        imageAdd.image = UIImage(named: "add-image")
+        
+        tableView.reloadData()
     }
 
 
@@ -121,6 +143,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     print("Succesfully uploaded image to Firbase Storage")
 
                     let downloadURL = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadURL {
+                        self.postToFirebase(imgUrl: url)
+                    }
                 }
             }
         }
